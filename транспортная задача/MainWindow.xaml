@@ -1,0 +1,71 @@
+﻿<Window x:Class="транспортная_задача.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:транспортная_задача"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="592" Margin="43,122,36,55" Width="713">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="57"/>
+            <RowDefinition Height="Auto" MinHeight="51"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Ячейки для стоимости транспортировки -->
+        <TextBox x:Name="cost00" Grid.Row="0" Grid.Column="0" Margin="23,10,23,8" Height="Auto"/>
+        <TextBox x:Name="cost01" Grid.Row="0" Grid.Column="1" Margin="30,10,29,8" Height="Auto"/>
+        <TextBox x:Name="cost02" Grid.Row="0" Grid.Column="2" Margin="44,10,44,8" Height="Auto"/>
+
+        <TextBox x:Name="cost10" Grid.Row="1" Grid.Column="0" Margin="23,6" Height="Auto"/>
+        <TextBox x:Name="cost11" Grid.Row="1" Grid.Column="1" Margin="30,6,29,6" Height="Auto"/>
+        <TextBox x:Name="cost12" Grid.Row="1" Grid.Column="2" Margin="44,6" Height="Auto"/>
+
+        <TextBox x:Name="cost20" Grid.Row="2" Grid.Column="0" Margin="23,6" Height="Auto"/>
+        <TextBox x:Name="cost21" Grid.Row="2" Grid.Column="1" Margin="30,6,29,6" Height="Auto"/>
+        <TextBox x:Name="cost22" Grid.Row="2" Grid.Column="2" Margin="44,6" Height="Auto"/>
+
+        <TextBox x:Name="cost30" Grid.Row="3" Grid.Column="0" Margin="23,6" Height="Auto"/>
+        <TextBox x:Name="cost31" Grid.Row="3" Grid.Column="1" Margin="30,6,29,6" Height="Auto"/>
+        <TextBox x:Name="cost32" Grid.Row="3" Grid.Column="2" Margin="44,6" Height="Auto"/>
+
+        <TextBox x:Name="cost40" Grid.Row="4" Grid.Column="0" Margin="23,6" Height="Auto"/>
+        <TextBox x:Name="cost41" Grid.Row="4" Grid.Column="1" Margin="30,6,29,6" Height="Auto"/>
+        <TextBox x:Name="cost42" Grid.Row="4" Grid.Column="2" Margin="44,6" Height="Auto"/>
+
+        <!-- Ячейки для запасов -->
+        <TextBox x:Name="supply0" Grid.Row="0" Grid.Column="4" Margin="5,10,5,8" Height="Auto"/>
+        <TextBox x:Name="supply1" Grid.Row="1" Grid.Column="4" Margin="5,6" Height="Auto"/>
+        <TextBox x:Name="supply2" Grid.Row="2" Grid.Column="4" Margin="5,6" Height="Auto"/>
+        <TextBox x:Name="supply3" Grid.Row="3" Grid.Column="4" Margin="5,6" Height="Auto"/>
+        <TextBox x:Name="supply4" Grid.Row="4" Grid.Column="4" Margin="5,6" Height="Auto"/>
+
+        <!-- Ячейки для потребностей -->
+        <TextBox x:Name="demand0" Grid.Row="5" Grid.Column="0" Margin="23,7,23,55" Grid.RowSpan="3" Height="Auto"/>
+        <TextBox x:Name="demand1" Grid.Row="5" Grid.Column="1" Margin="30,7,29,55" Grid.RowSpan="3" Height="Auto"/>
+        <TextBox x:Name="demand2" Grid.Row="5" Grid.Column="2" Margin="44,7,44,55" Grid.RowSpan="3" Height="Auto"/>
+
+        <!-- Кнопки для управления -->
+        <Button Grid.Row="7" Grid.Column="0" Content="Рассчитать" Margin="5,8,5,10" Click="Calculate_Click" Height="Auto"/>
+        <Button Grid.Row="7" Grid.Column="1" Content="Очистить все" Margin="5,8,5,10" Click="ClearAll_Click" Height="Auto"/>
+        <Button Grid.Row="7" Grid.Column="2" Content="Сохранить в файл" Margin="5,10" Click="SaveToFile_Click" Height="Auto"/>
+
+        <!-- Элементы для вывода результата -->
+        <TextBlock Grid.Row="8" Grid.ColumnSpan="2" Text="Результаты:" Margin="10,10,0,0" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" Width="92"/>
+        <TextBox x:Name="txtResults" Grid.Row="8" Grid.ColumnSpan="5" Margin="10,38,10,-184" Height="Auto" TextWrapping="Wrap" IsReadOnly="True" Background="#F0F0F0" BorderBrush="Gray" BorderThickness="1"/>
+    </Grid>
+</Window>
